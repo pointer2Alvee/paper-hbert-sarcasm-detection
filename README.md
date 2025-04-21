@@ -8,12 +8,12 @@ Implementation of the paper :
 **["A Novel Hierarchical BERT Architecture for Sarcasm Detection"](https://aclanthology.org/2020.figlang-1.14.pdf)** using **Python**, **Pandas**, **NumPy**, **Kaggle** and **TensorFlow**.
 
 #### 🧠 Overview
-This project implements a Hierarchical BERT (H-BERT) architecture for sarcasm detection in text, inspired by the paper **"A Novel Hierarchical BERT Architecture for Sarcasm Detection".** Unlike traditional sentiment analysis tasks, sarcasm detection often requires understanding multi-sentence context and subtle cues. This hierarchical model addresses that by processing text at both the sentence and context level using a 5 layered architecture that includes (1) sentence encoding, (2) context summarization with Conv1D, (3) a bi-directional LSTM for capturing temporal dependencies, (4) CNN layers for local feature extraction, and a (5) final fully connected layer for classification.
+This project implements a Hierarchical BERT (H-BERT) architecture for sarcasm detection in text, inspired by the paper **"A Novel Hierarchical BERT Architecture for Sarcasm Detection".** This model is a combination of LSTM & CNN with the BERT embeddings. Unlike traditional sentiment analysis tasks, sarcasm detection often requires understanding multi-sentence context and subtle cues. This hierarchical model addresses that by processing text at both the sentence and context level using a 5 layered architecture that includes (1) sentence encoding, (2) context summarization with Conv1D, (3) a bi-directional LSTM for capturing temporal dependencies, (4) CNN layers for local feature extraction, and a (5) final fully connected layer for classification.
 
-The model is trained on the "Sarcasm on Reddit" dataset from Kaggle rather than the dataset used in the original paper. Preprocessing includes data cleaning and dimensionality reduction. Tokenization is done using the BERT-base-uncased tokenizer from Hugging Face. Evaluation is performed using accuracy as the primary metric, and the entire model is implemented in Python using TensorFlow.
+The model is trained on the **"Sarcasm on Reddit"** dataset from Kaggle rather than the dataset used in the original paper. Preprocessing includes data cleaning and dimensionality reduction. Tokenization is done using the **'bert-base-uncased tokenizer'** from Hugging Face. Evaluation is performed using accuracy as the primary metric, and the entire model is implemented in Python using TensorFlow.
 
 #### 🎯 Use Cases 
-- Detecting Sarcasm on social media platforms
+- Detecting Sarcastic comments or opinions on social media platforms
 
 #### 🟢 Project Status
 - Current Version: V1.0
@@ -28,23 +28,21 @@ paper-hbert-sarcasm-detection/
 ├── assets/                      
 │   └── images/
 ├── datasets/                      
-│   └── raw/
-├── notebooks/               
-│   └── sarcasm-analysis.ipynb            
-└── paper/                   
-    ├── paper.pdf
-    └── citation.bib
+│   └── sarcasm-reddit/
+|   │   └── sarcasm_trained_balanced.csv
+└── notebooks/               
+    └── sarcasm-analysis.ipynb            
 ```
 
-
 ### ✨ Features
-- ✅ Custom `HierarchicalBERT` model class
+- ✅ Custom `Hierarchical-BERT` model class
 - ✅ Preprocessed Data
 - ✅ Sentence tokenization and padding
-- ✅ Evaluation metrics: Accuracy, Precision, Recall, F1-score
+- ✅ Evaluation metrics: Accuracy 
 
 🛠️ In progress:
-▫️ Modification of H-bert Architecutre 
+- Modification of H-bert Architecutre 
+- Introducing Precision, Recall, F1-score
 
 <!--
 ### 🎥 Demo
@@ -61,19 +59,18 @@ paper-hbert-sarcasm-detection/
 
 #### 💻 Software Requirements
 - IDE (VS Code) or jupyter notebook or google colab
-- Best run on Kaggle using GPU P100
-- Python 3
+- **Best run on Kaggle using GPU P100**
   
 #### 🛡️ Tech Stack
 - Language: python
-- NLP/ML/LLM: transformers, huggingface_hub, sklearn, pandas, numpy
+- NLP/ML: huggingface_hub, sklearn, pandas, numpy
 - Deep Learning: pytorch, CNN, LSTM, transformers-models (bert-base-uncased) 
 - Visualization: matplotlib
 
 #### 🔍 Modules Breakdown
 <b> 📥 (1) Data-Preprocessing :</b> wh 
 - Using a different Dataset than what was used on paper
-- Loading [Sarcasm on Reddit](https://www.kaggle.com/datasets/danofer/sarcasm?select=train-balanced-sarcasm.csv) from kaggle 
+- Loading [Sarcasm on Reddit](https://www.kaggle.com/datasets/danofer/sarcasm?select=train-balanced-sarcasm.csv) dataset from kaggle 
 - Dimention Reduced, Data Cleaned
 
 <b> 🎭 (2) Tokenization :</b> basi
@@ -103,8 +100,6 @@ paper-hbert-sarcasm-detection/
 - The DataFlow:- 
 (L-1) output --> (L-2) output --> (L-3) output --> (L-4) output --> (L-5) output --> predictions (0 or 1)
 
-<b> 📈 (4) Model Evaluation :</b> shows
-- Using 'Accuracy' Meterics to evaluate model performance
 
 ##### 📊 Evaluation
 - Using 'Accuracy' Meterics to evaluate model performance
@@ -135,16 +130,16 @@ matplotlib
 3. See accuracy
 
 #### 📖 Usage
-- Open VS Code / kaggle 
+- Open VS Code / kaggle
+
 ### 🧪 Sample Topics Implemented
-- ✅ Web Scraping
-- ✅ BERT model & NER model
-- ✅ Theme Classifier, Character Relationship Network
+- ✅ BERT model 
+- ✅ LSTM, CNN, CONVOLUTION, POOLING
   
-- ⏳ Upcoming  : Chatbot, Text Classifier
+- ⏳ Upcoming  : Modification of Hbert
 
 ### 🧭 Roadmap
-- [x] Full attack classifier with fine-tuned DistilBERT
+- [x] Paper Implementation of Hbert 
 
 
 ### 🤝 Contributing
